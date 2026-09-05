@@ -28,6 +28,10 @@ rm -rf /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
 
 rm -f /usr/bin/waydroid-launcher
 rm -f /usr/share/applications/waydroid-container-restart.desktop
+rm -f /usr/libexec/waydroid-container-restart
+rm -f /usr/libexec/waydroid-container-start
+rm -f /usr/libexec/waydroid-container-stop
+rm -f /usr/libexec/waydroid-fix-controllers
 rm -rf /usr/share/applications/Waydroid/
 rm -f /usr/share/applications/discourse.desktop
 
