@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "machine_id": "bazzite",
+  "updated_at": "2026-09-05T11:40:42.332Z",
+  "active": [
+    {
+      "label": "sboissezon",
+      "branch": "sboissezon",
+      "base_ref": "origin/master",
+      "created_at": "2026-09-05T11:35:21.874Z"
+    },
+    {
+      "label": "pepi-bazzite",
+      "branch": "pepi-bazzite",
+      "base_ref": "origin/master",
+      "created_at": "2026-09-05T11:35:21.874Z"
+    }
+  ],
+  "archived": []
+}
