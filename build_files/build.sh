@@ -39,4 +39,4 @@ rm -f /usr/share/applications/discourse.desktop
 # /var isn't part of the committed image, so `flatpak install` can't run
 # here during build - it has to happen post-boot once /var/lib/flatpak
 # exists. See system_files/usr/share/my-flatpaks/flatpaks for the list.
-systemctl enable my-flatpak-install.service
+systemctl enable pepi-install.service
