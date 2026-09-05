@@ -14,7 +14,6 @@ cp -avf "/ctx/system_files"/. /
 
 dnf5 install -y gnome-shell-extension-dash-to-dock
 dnf5 remove -y waydroid
-rm -f /usr/bin/waydroid-launcher
 dnf5 remove -y gnome-shell-extension-gsconnect
 dnf5 remove -y input-remapper
 dnf5 remove -y rom-properties
@@ -24,5 +23,16 @@ dnf5 remove -y rom-properties
 # /usr/share/gnome-shell/extensions/ (see ublue-os/bazzite's
 # build_files/build-gnome-extensions), so we just delete the directories.
 rm -rf /usr/share/gnome-shell/extensions/burn-my-windows@schneegans.github.com
-rm -rf /usr/share/gnome-shell/extensions/compiz-alike-magic-lamp-effect@hermes83.github.com
+rm -rf /usr/share/gnome-shell/extensions/compiz-windows-effect@hermes83.github.com/schemas
 rm -rf /usr/share/gnome-shell/extensions/desktop-cube@schneegans.github.com
+
+rm -f /usr/bin/waydroid-launcher
+rm -f /usr/share/applications/waydroid-container-restart.desktop
+rm -rf /usr/share/applications/Waydroid/
+rm -f /usr/share/applications/discourse.desktop
+
+# Install our custom Flatpaks (Discord, Zed, Transmission) on first boot.
+# /var isn't part of the committed image, so `flatpak install` can't run
+# here during build - it has to happen post-boot once /var/lib/flatpak
+# exists. See system_files/usr/share/my-flatpaks/flatpaks for the list.
+systemctl enable my-flatpak-install.service

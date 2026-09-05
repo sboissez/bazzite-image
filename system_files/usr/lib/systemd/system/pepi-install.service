@@ -1,0 +1,14 @@
+[Unit]
+Description=Install custom Flatpaks on first boot
+After=flatpak-system-helper.service network-online.target
+Wants=network-online.target
+ConditionPathExists=!/var/lib/pepi-flatpaks-installed
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/usr/bin/flatpak install --system -y --noninteractive flathub $(cat /usr/share/pepi-flatpaks/flatpaks)'
+ExecStartPost=/usr/bin/touch /var/lib/pepi-flatpaks-installed
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
